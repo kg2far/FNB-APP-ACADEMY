@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Broken Window - Khumalo Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="headerr">
+        <h1>Broken Window Selection</h1>
+    </div>
+
+    <div class="window-gallery">
+        <div class="window-card" data-name="ND4F-FULL-WINDOW" data-price="600">
+            <div style="color:#2c5364; font-size:1rem; font-weight:500; margin-bottom:8px;">
+                If the window is broken move to the window and click it
+            </div>
+            <div class="window-card-img-wrapper" style="position:relative; width:180px; height:120px;">
+                <img src="images/nd4f.png" alt="ND4F-FULL-WINDOW" style="width:180px; height:120px; display:block;">
+
+                <!-- Hover labels -->
+                <span id="label-left-ND4F" style="display:none;position:absolute;left:0;top:50%;transform:translateY(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px 0 0 8px;font-size:1rem;z-index:10;">Left (R150)</span>
+                <span id="label-center-ND4F" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px;font-size:1rem;z-index:10;">Center (R200)</span>
+                <span id="label-right-ND4F" style="display:none;position:absolute;right:0;top:50%;transform:translateY(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:0 8px 8px 0;font-size:1rem;z-index:10;">Right (R150)</span>
+                <span id="label-top-ND4F" style="display:none;position:absolute;top:0;left:50%;transform:translateX(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px 8px 0 0;font-size:1rem;z-index:10;">Top (R100)</span>
+
+                <!-- Clickable overlay areas -->
+                <div onmouseenter="showAreaLabel('left','ND4F')" onmouseleave="hideAreaLabel('left','ND4F')" onclick="areaClicked('ND4F - Left', 150)" style="position:absolute;top:40px;left:0;width:45px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('center','ND4F')" onmouseleave="hideAreaLabel('center','ND4F')" onclick="areaClicked('ND4F - Center', 200)" style="position:absolute;top:40px;left:45px;width:90px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('right','ND4F')" onmouseleave="hideAreaLabel('right','ND4F')" onclick="areaClicked('ND4F - Right', 150)" style="position:absolute;top:40px;left:135px;width:45px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('top','ND4F')" onmouseleave="hideAreaLabel('top','ND4F')" onclick="areaClicked('ND4F - Top', 100)" style="position:absolute;top:0;left:0;width:180px;height:40px;cursor:pointer;"></div>
+            </div>
+            <div class="window-name">ND4F FULL WINDOW <span style="font-size:0.95em;color:#555;">R600</span></div>
+            <input type="number" min="1" value="1" class="quantity-input" id="qty-ND4F-FULL-WINDOW.,kljh" />
+            <button class="add-btn" onclick="addToList('ND4F-FULL-WINDOW', 600)">Add</button>
+        </div>
+    </div>
+
+
+    <div class="window-gallery">
+        <div class="window-card" data-name="ND4F-FULL-WINDOW" data-price="600">
+            <div style="color:#2c5364; font-size:1rem; font-weight:500; margin-bottom:8px;">
+                If the window is broken move to the window and click it
+            </div>
+            <div class="window-card-img-wrapper" style="position:relative; width:180px; height:120px;">
+                <img src="images/nd4f.png" alt="ND4F-FULL-WINDOW" style="width:180px; height:120px; display:block;">
+
+                <!-- Hover labels -->
+                <span id="label-left-ND4F" style="display:none;position:absolute;left:0;top:50%;transform:translateY(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px 0 0 8px;font-size:1rem;z-index:10;">Left (R150)</span>
+                <span id="label-center-ND4F" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px;font-size:1rem;z-index:10;">Center (R200)</span>
+                <span id="label-right-ND4F" style="display:none;position:absolute;right:0;top:50%;transform:translateY(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:0 8px 8px 0;font-size:1rem;z-index:10;">Right (R150)</span>
+                <span id="label-top-ND4F" style="display:none;position:absolute;top:0;left:50%;transform:translateX(-50%);color:#fff;background:rgba(44,83,100,0.85);padding:4px 10px;border-radius:8px 8px 0 0;font-size:1rem;z-index:10;">Top (R100)</span>
+
+                <!-- Clickable overlay areas -->
+                <div onmouseenter="showAreaLabel('left','ND4F')" onmouseleave="hideAreaLabel('left','ND4F')" onclick="areaClicked('ND4F - Left', 150)" style="position:absolute;top:40px;left:0;width:45px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('center','ND4F')" onmouseleave="hideAreaLabel('center','ND4F')" onclick="areaClicked('ND4F - Center', 200)" style="position:absolute;top:40px;left:45px;width:90px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('right','ND4F')" onmouseleave="hideAreaLabel('right','ND4F')" onclick="areaClicked('ND4F - Right', 150)" style="position:absolute;top:40px;left:135px;width:45px;height:80px;cursor:pointer;"></div>
+                <div onmouseenter="showAreaLabel('top','ND4F')" onmouseleave="hideAreaLabel('top','ND4F')" onclick="areaClicked('ND4F - Top', 100)" style="position:absolute;top:0;left:0;width:180px;height:40px;cursor:pointer;"></div>
+            </div>
+            <div class="window-name">ND4F FULL WINDOW <span style="font-size:0.95em;color:#555;">R600</span></div>
+            <input type="number" min="1" value="1" class="quantity-input" id="qty-ND4F-FULL-WINDOW.,kljh" />
+            <button class="add-btn" onclick="addToList('ND4F-FULL-WINDOW', 600)">Add</button>
+        </div>
+    </div>
+
+    <!-- Quotation Area -->
+    <div id="quotation-print-area" class="selected-list">
+        <h3>Selected Windows:</h3>
+        <div id="windowItems" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        <div id="totalPrice" style="margin-top: 18px; text-align: right; font-size: 1.15rem; font-weight: bold; color: #2c5364;"></div>
+        <div class="quotation-actions" style="display: flex; gap: 12px; margin-top: 18px; justify-content: flex-end;">
+            <button onclick="saveQuotation()" class="action-btn">Save</button>
+            <button onclick="sendQuotation()" class="action-btn">Send Quotation</button>
+            <button onclick="printQuotation()" class="action-btn">Print Quotation</button>
+            <button onclick="downloadPDF()"class="action-btn">Download PDF</button>
+        </div>
+    </div>
+
+    <script>
+        const selectedWindows = {};
+
+        function addToList(name, price) {
+            const qtyInput = document.getElementById('qty-' + name);
+            let qty = parseInt(qtyInput.value, 10);
+            if (isNaN(qty) || qty < 1) qty = 1;
+
+            if (selectedWindows[name]) {
+                selectedWindows[name].qty += qty;
+            } else {
+                selectedWindows[name] = { qty: qty, price: price };
+            }
+            renderSelectedList();
+        }
+
+        function removeItem(name) {
+            delete selectedWindows[name];
+            renderSelectedList();
+        }
+
+        function changeQty(name, delta) {
+            if (selectedWindows[name]) {
+                selectedWindows[name].qty += delta;
+                if (selectedWindows[name].qty < 1) {
+                    removeItem(name);
+                } else {
+                    renderSelectedList();
+                }
+            }
+        }
+
+        function showAreaLabel(area, windowCode) {
+            document.getElementById(`label-${area}-${windowCode}`).style.display = 'block';
+        }
+
+        function hideAreaLabel(area, windowCode) {
+            document.getElementById(`label-${area}-${windowCode}`).style.display = 'none';
+        }
+
+        function areaClicked(areaName, price) {
+            if (selectedWindows[areaName]) {
+                selectedWindows[areaName].qty += 1;
+            } else {
+                selectedWindows[areaName] = { qty: 1, price: price };
+            }
+            renderSelectedList();
+        }
+
+        function renderSelectedList() {
+            const container = document.getElementById('windowItems');
+            container.innerHTML = '';
+            let total = 0;
+
+            for (const [name, data] of Object.entries(selectedWindows)) {
+                const item = document.createElement('div');
+                item.className = 'selected-item';
+                item.style.display = 'flex';
+                item.style.justifyContent = 'space-between';
+                item.style.alignItems = 'center';
+                item.style.background = '#2c5364';
+                item.style.color = '#fff';
+                item.style.borderRadius = '6px';
+                item.style.padding = '6px 14px';
+                item.style.marginBottom = '6px';
+                item.style.fontSize = '1rem';
+
+                item.innerHTML = `
+                    <span>
+                        ${name} <span style="color:#ffd700; font-size:0.98em;">R${data.price}</span>
+                    </span>
+                    <span>
+                        <button onclick="changeQty('${name}', -1)" style="margin-right:6px;background:#fff;color:#2c5364;border:none;border-radius:4px;width:28px;height:28px;font-size:1.1em;cursor:pointer;">-</button>
+                        Qty: ${data.qty}
+                        <button onclick="changeQty('${name}', 1)" style="margin-left:6px;background:#fff;color:#2c5364;border:none;border-radius:4px;width:28px;height:28px;font-size:1.1em;cursor:pointer;">+</button>
+                        | Subtotal: <b>R${data.qty * data.price}</b>
+                        <button onclick="removeItem('${name}')" style="margin-left:8px;background:red;color:#fff;border:none;border-radius:4px;width:28px;height:28px;font-size:1.1em;cursor:pointer;">×</button>
+                       
+
+                    </span>
+                `;
+                container.appendChild(item);
+                total += data.qty * data.price;
+            }
+            document.getElementById('totalPrice').textContent = total > 0 ? `Total: R${total}` : '';
+        }
+
+        function saveQuotation() {
+            const data = {
+                items: selectedWindows,
+                total: document.getElementById('totalPrice').textContent
+            };
+            localStorage.setItem('savedQuotation', JSON.stringify(data));
+            alert('Quotation saved locally!');
+        }
+
+        function sendQuotation() {
+            alert('Quotation sent! (Demo: implement email or server logic here)');
+        }
+
+        function printQuotation() {
+            const printContents = document.getElementById('quotation-print-area').innerHTML;
+            const originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+            location.reload();
+        }
+
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(18);
+            doc.text("Window Quotation", 14, 20);
+
+             doc.setFontSize(12);
+            let y = 40;
+
+        // Table headers
+        doc.text("Item", 14, y);
+        doc.text("Price", 80, y);
+        doc.text("Qty", 110, y);
+        doc.text("Subtotal", 150, y);
+        y += 10;
+
+        let total = 0;
+
+        for (const name in selectedWindows) {
+            let item = selectedWindows[name];
+            let subtotal = item.price * item.qty;
+            total += subtotal;
+
+            doc.text(name, 14, y);
+            doc.text(`R${item.price}`, 80, y);
+            doc.text(`${item.qty}`, 110, y);
+            doc.text(`R${subtotal}`, 150, y);
+            y += 10;
+    }
+
+        // Draw total
+        y += 5;
+        doc.setFontSize(14);
+        doc.text(`Total: R${total}`, 14, y);
+
+        // Save the file
+        doc.save("quotation.pdf");
+}
+
+
+
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+<footer id="main-footer">
+        <div class="footer-content">
+            <span>&copy; 2025 Big Enterprises. All rights reserved.</span>
+            <span> | Designed by Big Enterprises Team</span>
+        </div>
+    </footer>
+</html>

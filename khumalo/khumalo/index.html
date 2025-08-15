@@ -1,0 +1,148 @@
+<!DOCTYPE html >
+<html>
+
+<head> 		
+<link  rel="stylesheet"		href="style.css"     > 
+</head>
+
+<body>
+    
+	<div id="headerr" href="style.css">
+	<h1> Welcome To Big Enterprices</h1>
+	</div>
+    
+    
+    <div id="menu1" href="style.css">
+	<a href="broken-window.html">Glass Fitting</a>
+  <a href="contact.html">Contact</a>
+	<a href="about.html">About</a>
+	<!--<a href="#">tihunyi/woods</a>
+	<a href="#" >tihuku/chicken</a>
+	<a href="#" >website design</a>
+        <a href="#" >house plan </a>-->
+    </div>
+
+	<div id ="menuu" href="style.css" >
+        
+	
+	</div>
+
+
+
+<!-- Button to open sidebar -->
+<button id="open-auth-btn">Sign In / Register</button>
+
+<!-- Overlay -->
+<div id="auth-overlay"></div>
+
+<!-- Sidebar -->
+<div id="auth-sidebar" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+
+  <!-- Tabs -->
+  <div id="auth-tabs">
+    <button id="tab-signin" class="active" aria-controls="signin-form" aria-selected="true">Sign In</button>
+    <button id="tab-register" aria-controls="register-form" aria-selected="false">Register</button>
+  </div>
+
+  <!-- Sign In Form -->
+  <div id="signin-form" class="auth-form active">
+    <h2 id="auth-title">Sign In</h2>
+    <form>
+      <label for="signin-username">Username:</label>
+      <input type="text" id="signin-username" name="signin-username" required />
+      <label for="signin-password">Password:</label>
+      <input type="password" id="signin-password" name="signin-password" required />
+      <button type="submit" class="submit-btn">Sign In</button>
+    </form>
+  </div>
+
+  <!-- Register Form -->
+  <div id="register-form" class="auth-form">
+    <h2>Register</h2>
+    <form>
+      <label for="reg-name">Name:</label>
+      <input type="text" id="reg-name" name="reg-name" required />
+      <label for="reg-surname">Surname:</label>
+      <input type="text" id="reg-surname" name="reg-surname" required />
+      <label for="reg-age">Age:</label>
+      <input type="number" id="reg-age" name="reg-age" required />
+      <label for="reg-address">Street Address:</label>
+      <input type="text" id="reg-address" name="reg-address" required />
+      <label for="reg-email">Email:</label>
+      <input type="email" id="reg-email" name="reg-email" required />
+      <label for="register-username">Username:</label>
+      <input type="text" id="register-username" name="register-username" required />
+      <label for="register-password">Password:</label>
+      <input type="password" id="register-password" name="register-password" required />
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+  </div>
+
+  <button class="close-btn" id="close-auth-btn">Close</button>
+</div>
+
+<script>
+  // Elements
+  const openBtn = document.getElementById('open-auth-btn');
+  const closeBtn = document.getElementById('close-auth-btn');
+  const overlay = document.getElementById('auth-overlay');
+  const sidebar = document.getElementById('auth-sidebar');
+  const tabSignIn = document.getElementById('tab-signin');
+  const tabRegister = document.getElementById('tab-register');
+  const formSignIn = document.getElementById('signin-form');
+  const formRegister = document.getElementById('register-form');
+
+  // Open sidebar
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('show');
+    overlay.classList.add('show');
+    showSignIn();
+  });
+
+  // Close sidebar
+  function closeSidebar() {
+    sidebar.classList.remove('show');
+    overlay.classList.remove('show');
+  }
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  // Show sign in form
+  function showSignIn() {
+    tabSignIn.classList.add('active');
+    tabSignIn.setAttribute('aria-selected', 'true');
+    tabRegister.classList.remove('active');
+    tabRegister.setAttribute('aria-selected', 'false');
+    formSignIn.classList.add('active');
+    formRegister.classList.remove('active');
+  }
+
+  // Show register form
+  function showRegister() {
+    tabRegister.classList.add('active');
+    tabRegister.setAttribute('aria-selected', 'true');
+    tabSignIn.classList.remove('active');
+    tabSignIn.setAttribute('aria-selected', 'false');
+    formRegister.classList.add('active');
+    formSignIn.classList.remove('active');
+  }
+
+  // Tab click handlers
+  tabSignIn.addEventListener('click', showSignIn);
+  tabRegister.addEventListener('click', showRegister);
+</script>
+
+<footer id="footer">
+        <div class="footer-content">
+            <span>&copy; 2025 Big Enterprises. All rights reserved.</span>
+            <span> | Designed by Big Enterprises Team</span>
+        </div>
+    </footer>
+
+</script>
+</body>
+
+
+
+
+</html>
