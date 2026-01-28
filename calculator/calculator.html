@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+    
+    
+    <table border="1">
+        <tr>
+            <td colspan="4">
+            <input type="text" id="inputBox" value="0"/>
+            </td>
+        
+        </tr>
+        
+        <tr>
+            <td class="digitButton" onclick="digitBtnPressed(7)">7</td>
+            <td class="digitButton"onclick="digitBtnPressed(8)">8</td>
+            <td class="digitButton"onclick="digitBtnPressed(9)">9</td>
+            <td class="operationButton"onclick="operatorBtnPressed('*')">x</td>    
+        </tr>
+        
+        <tr>
+            <td class="digitButton"onclick="digitBtnPressed(4)">4</td>
+            <td class="digitButton"onclick="digitBtnPressed(5)">5</td>
+            <td class="digitButton"onclick="digitBtnPressed(6)">6</td>
+            <td class="operationButton"onclick="operatorBtnPressed('-')">-</td>    
+        </tr>
+        
+        <tr>
+            <td class="digitButton"onclick="digitBtnPressed(1)">1</td>
+            <td class="digitButton"onclick="digitBtnPressed(2)">2</td>
+            <td class="digitButton"onclick="digitBtnPressed(3)">3</td>
+            <td class="operationButton"onclick="operatorBtnPressed('+')">+</td>    
+        </tr>
+        <tr>
+            <td class="digitButton" colspan="2" onclick="digitBtnPressed(0)">0</td>
+            <td class="ACButton" onclick="btnACPressed()">AC</td>
+            <td class="operationButton" onclick="operatorBtnPressed('/')">/</td>
+        </tr>
+        
+        <tr>
+            <td class="operationButton" colspan="4" onclick="equalsBtnPressed()">=</td>
+        </tr>       
+        
+        </table>
+        
+       <script>
+				let currentOperator = null;
+				let value1 = null;
+				let newLine = false;
+
+				// Digit button handler
+				function digitBtnPressed(button){
+				const inputBox = document.getElementById("inputBox");
+
+				if(newLine || inputBox.value === "0"){
+						inputBox.value = button;
+						newLine = false;
+					} else {
+							inputBox.value += button;
+							}
+						}
+
+    // Decimal button handler (if you want a decimal point)
+    function decimalBtnPressed(){
+        const inputBox = document.getElementById("inputBox");
+        if(newLine){
+            inputBox.value = "0.";
+            newLine = false;
+        } else if(!inputBox.value.includes(".")){
+            inputBox.value += ".";
+        }
+    }
+
+    // AC button handler
+    function btnACPressed(){
+        document.getElementById("inputBox").value = "0";
+        value1 = null;
+        currentOperator = null;
+        newLine = false;
+    }
+
+    // Operator button handler
+    function operatorBtnPressed(operator){
+        const inputBox = document.getElementById("inputBox");
+
+        if(value1 !== null && !newLine){
+            // If there was a previous value and operator, calculate immediately
+            equalsBtnPressed();
+        }
+
+        value1 = parseFloat(inputBox.value);
+        currentOperator = operator;
+        newLine = true;
+    }
+
+    // Equals button handler
+    function equalsBtnPressed(){
+        const inputBox = document.getElementById("inputBox");
+        if(currentOperator === null) return; // Nothing to calculate
+
+        const value2 = parseFloat(inputBox.value);
+        let finalTotal;
+
+        switch(currentOperator){
+            case "+":
+                finalTotal = value1 + value2;
+                break;
+            case "-":
+                finalTotal = value1 - value2;
+                break;
+            case "*":
+                finalTotal = value1 * value2;
+                break;
+            case "/":
+                finalTotal = value1 / value2;
+                break;
+        }
+
+        inputBox.value = finalTotal;
+        value1 = finalTotal; // Keep result for next operation
+        newLine = true; // Next digit will start a new number
+        currentOperator = null; // Reset operator
+    }
+</script>
+
+    
+    
+    </body>
+
+</html>
