@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+	<title>Contact Management App</title>
+
+    </head>
+    
+    <body onload="fetchContacts()">
+        <div id="table">Contacts loading...</div>
+        <button id="refresh" type="button">Refresh</button>
+        <button id="addContact" type="button">Add Contact</button>
+    
+        <script src="config.js"></script>
+        
+        
+        <script>
+            
+            document.getElementById("refresh").addEventListener('click', fetchContacts);
+            function fetchContacts(){
+                fetch(rootPath + "controller/get-contacts/")
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    displayOutput(data);
+                    //console.log(data);
+                    
+                    //13.03 13.12 13.18 13.29 13.38 13.46 13.55 13.58 14.02
+                })
+            }
+        
+            function displayOutput(data){
+                output = "<table >";
+                
+                for(a in data){
+                    output += `
+                        <tr>
+                            
+                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="20p"/></td>
+							<td>
+                            <th>${data[a].firstname}</th>
+                            <th>${data[a].lastname}</th></td>
+       
+                        </tr>
+                       ` 
+                }
+                output += "</table>";
+                document.getElementById("table").innerHTML = output;
+				
+
+            }
+        
+        </script>
+    
+    </body>
+    
+</html>
