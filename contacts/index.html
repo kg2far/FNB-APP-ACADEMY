@@ -16,9 +16,12 @@
         
         <script>
             
+			document.getElementById("addContact").addEventListener('click', addContact);
             document.getElementById("refresh").addEventListener('click', fetchContacts);
+			
             function fetchContacts(){
-                fetch(rootPath + "controller/get-contacts/")
+			
+                fetch(rootPath + 'controller/get-contacts/?apiKey=' + apiKey)
                 .then(function(response){
                     return response.json();
                 })
@@ -28,28 +31,65 @@
                     
                     //13.03 13.12 13.18 13.29 13.38 13.46 13.55 13.58 14.02
                 })
-            }
-        
+				.catch(function(error){
+					console.log("Error:", error);
+				});
+            
+        }
             function displayOutput(data){
-                output = "<table >";
+              let  output = "<table >";
                 
                 for(a in data){
                     output += `
                         <tr>
                             
-                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="20p"/></td>
+                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="20px"/></td>
+							
+                            <td><h5>${data[a].firstname}</h5></td>
+                            <td><h5>${data[a].lastname}</h5></td>
+
 							<td>
-                            <th>${data[a].firstname}</th>
-                            <th>${data[a].lastname}</th></td>
+							<button onclick="editContact(${data[a].id})">Edit</button>
+							</td>
+
+							<td>
+							<button onclick="deleteContact(${data[a].id})">Delete</button>
+							</td>
        
                         </tr>
-                       ` 
+                       ` ;
                 }
                 output += "</table>";
                 document.getElementById("table").innerHTML = output;
 				
 
             }
+			
+			function addContact(){
+				window.open("add-contacts.html", "_self");
+				}
+			function editContact(id){
+				localStorage.setItem("id" , id);
+				window.open("edit-contact.html", "_self");
+			}
+			function deleteContact(id){
+				
+				if(confirm("Are you sure you want to delete this contact?")){
+				fetch(rootPath + 'controller/delete-contact/?id=' + id +'&apiKey=' + apiKey)
+				
+				.then(function(response){
+					return response.text();
+				})
+				
+				.then(function(data){
+					fetchContacts();
+				})
+				
+				.catch(function(error){
+					console.log(error);
+				})
+			}
+			}
         
         </script>
     
